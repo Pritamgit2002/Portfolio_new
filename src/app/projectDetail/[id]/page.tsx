@@ -7,11 +7,12 @@ import {
   QueryDocumentSnapshot,
   DocumentData,
 } from "firebase/firestore";
-import { db } from "../../../firebase-config";
-import Image from "next/image";
-import { Project } from "../../../type";
 
-export default function ProjectPro() {
+import Image from "next/image";
+import { Project } from "../../../../type";
+import { db } from "../../../../firebase-config";
+
+export default function Page() {
   const [project, setProject] = useState<Project[]>([]);
   const [loading, setLoading] = useState<Boolean>(true);
 
@@ -43,9 +44,19 @@ export default function ProjectPro() {
     <div className="w-[100%] flex items-center justify-center gap-10">
       {project.map((data) => (
         <div className="w-[320px] h-[330px]" key={data.id}>
-          
+          <div>{data.name}</div>
+          <div>
+            <Image
+              src={data.image}
+              alt="image gv"
+              width={150}
+              height={150}
+              className="w-32 h-28"
+            />
+          </div>
         </div>
       ))}
     </div>
   );
 }
+

@@ -1,14 +1,14 @@
-import React from 'react'
-import Home from "./Home/page"
+import React from "react";
+import Home from "../components/home/page";
 
-type Props = {}
+type Props = {};
 
 const page = (props: Props) => {
   return (
     <div>
-      <Home/>
+      <Home />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

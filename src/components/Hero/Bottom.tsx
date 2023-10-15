@@ -1,5 +1,5 @@
 "use client";
-import ProjectPro from "../Projects/page";
+import Home from "@/app/projects/page";
 import { Button } from "../ui/button";
 import {
   Sheet,
@@ -15,10 +15,10 @@ export function Bottom() {
         <Button variant="outline" className="bg-white hover:bg-white">Bottom</Button>
       </SheetTrigger>
 
-      <SheetContent side="bottom" className="bg-red-400 h-screen w-full">
+      <SheetContent side="bottom" className="bg-red-400 h-screen w-full overflow-y-scroll">
 
-        <div className=" flex items-center justify-center bg-green-600 mt-12 ">
-          <ProjectPro/>
+        <div className=" flex items-center justify-center mt-12 h-max">
+          <Home/>
         </div>
       </SheetContent>
     </Sheet>

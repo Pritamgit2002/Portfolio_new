@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+// import { projectDetail } from "./projectDetail/page";
 
 const anim = {
   initial: { width: 0 },
@@ -14,7 +15,7 @@ const anim = {
   closed: { width: 0 },
 };
 
-export default function index() {
+export default function Project({ project }:any) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [isActive, setIsActive] = useState(false);
 
@@ -31,19 +32,21 @@ export default function index() {
         className={styles.project}
       >
         <p>{title1}</p>
-        <Link href="https://www.youtube.com/watch?v=CCKZdWXzMKg" target="_blank">
+        <Link href="">
           <motion.div
             variants={anim}
             animate={isActive ? "open" : "closed"}
             className={styles.imgContainer}
           >
+            {/* <Link href={`/projectDetail/${data.id}`}> */}
             <Image
-              src="/pic1.jpg"
+              src={`/medias/${src}`}
               alt="photo"
-              
               width={280}
               height={140}
-            />
+              className="w-[14vw] opacity-50 cursor-pointer"
+              />
+              {/* </Link> */}
            
           </motion.div>
         </Link>
